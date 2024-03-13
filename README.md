@@ -4,7 +4,8 @@ ASL Alphabet translation using OpenCV on RaspberryPi
 Uses OpenCV and CVZone Libraries.
 
 To run - open terminal and type: source myenv/bin/activate
-on the virtual enviroment type: Python3 "FILENAME.py" (replace "FILENAME" with the name of the file)
+
+On the terminals virtual enviroment type: Python3 "FILENAME.py" (replace "FILENAME" with the name of the file)
 
 Python file needs to be stored in /home/YOURUSER (replace "YOURUSER" with your username)
 
