@@ -1,3 +1,8 @@
+#####################
+# Author:Javicar31  #
+# Created: Feb2024  #
+#####################
+
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 import serial
@@ -27,9 +32,10 @@ while True:
             if fingers == [1, 1, 1, 1, 1]:  # All fingers up
                 arduino.write(b'1')  # Send '1' to turn LED on
             elif fingers == [0, 0, 0, 0, 0]:  # No finger up
-                arduino.write(b'0')  # Send '0' to turn LED off
+                arduino.write(b'0')  # Send '0' to turn LED off 
+                #NOTE: you can also control a servo this way.
         cv2.imshow("Hand Tracking", img)
-        if cv2.waitKey(1) & 0xFF == ord('q'):  # Press 'q' to quit
+        if cv2.waitKey(1) & 0xFF == ord('q'):  # Press "q" to quit
             break
 
 # Cleanup
