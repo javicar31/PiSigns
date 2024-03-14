@@ -1,3 +1,8 @@
+#####################
+# Author:Javicar31  #
+# Created: Feb2024  #
+#####################
+
 import cv2
 import numpy as np
 from cvzone.HandTrackingModule import HandDetector
@@ -22,11 +27,12 @@ def detect_asl_letters(hand, img):
     thumb_tip, index_tip, middle_tip, ring_tip, pinky_tip = landmarks[4][:2], landmarks[8][:2], landmarks[12][:2], landmarks[16][:2], landmarks[20][:2]
     asl_letter = ""
     
-    # A: Fist with thumb on the side
+    # S: Fist with thumb on the side
     if fingers == [0, 0, 0, 0, 0] and thumb_tip[0] < index_tip[0]:
         asl_letter = "S"
     
     # B: All fingers up and together, thumb across palm
+    
     # C: All fingers not fully extended and slightly curved inwards to form a 'C' shape
     if fingers == [0, 1, 1, 1, 1]:
         base_of_palm = landmarks[0][:2]  # Typically the base of the palm
@@ -73,7 +79,7 @@ def detect_asl_letters(hand, img):
     if fingers == [1, 1, 0, 0, 0]:
         asl_letter = "L"
 
-    # S: Fist with thumb in front of fingers
+    # A: Fist with thumb in front of fingers
     if fingers == [0, 0, 0, 0, 0] and thumb_tip[0] > index_tip[0]:
         asl_letter = "A"
         
@@ -106,7 +112,7 @@ while True:
                 cv2.putText(img, asl_letter, (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 255), 3)
 
     cv2.imshow("ASL Letter Detector", img)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'): #press "q" on keyboard to close 
         break
 
 cap.release()
