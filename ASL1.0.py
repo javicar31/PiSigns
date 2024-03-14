@@ -2,6 +2,7 @@
 # Author:Javicar31  #
 # Created: Feb2024  #
 #####################
+
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 
