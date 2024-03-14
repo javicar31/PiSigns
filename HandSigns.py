@@ -1,3 +1,8 @@
+#####################
+# Author:Javicar31  #
+# Created: Feb2024  #
+#####################
+
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 
@@ -5,7 +10,7 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 640)  # Width
 cap.set(4, 480)   # Height
 
-# Adjusted detection confidence for potentially better detection accuracy
+# Adjust detection confidence for potentially better detection accuracy
 detector = HandDetector(detectionCon=0.6, maxHands=2)
 
 def detect_gestures(hands):
@@ -51,7 +56,7 @@ while True:
         for gesture in gestures:
             cv2.putText(img, gesture, (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 255), 3)
     
-    cv2.imshow("Smart Camera", img)
+    cv2.imshow("HandSigns", img) 
     if cv2.waitKey(1) == ord("q"):
         break
 
