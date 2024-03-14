@@ -1,3 +1,7 @@
+#####################
+# Author:Javicar31  #
+# Created: Feb2024  #
+#####################
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 
@@ -15,7 +19,7 @@ def detect_asl_letters(hand, img):
     
     # A: Fist with thumb on the side
     if fingers == [0, 0, 0, 0, 0] and thumb_tip[0] < index_tip[0]:
-        asl_letter = "S"
+        asl_letter = "A"
     
     # B: All fingers up and together, thumb across palm
     # C: All fingers not fully extended and slightly curved inwards to form a 'C' shape
@@ -33,8 +37,6 @@ def detect_asl_letters(hand, img):
             asl_letter = "C"
         else:
             asl_letter = "B"
-    
-    # ... [Add other letter conditions here] ...
     
     # D: Index finger up, other fingers curled into the palm, thumb touching middle finger 
     if fingers == [0, 1, 0, 0, 0]:
@@ -55,8 +57,6 @@ def detect_asl_letters(hand, img):
     # I: Pinky up, other fingers curled, thumb across palm
     if fingers == [0, 0, 0, 0, 1]:
         asl_letter = "I"
-
-    # ... [Add other letter conditions here] ...
     
     # K: Middle and index finger up forming a V, thumb out
     if fingers == [0, 1, 1, 0, 0] and index_tip[1] > middle_tip[1]:
@@ -68,7 +68,7 @@ def detect_asl_letters(hand, img):
 
     # S: Fist with thumb in front of fingers
     if fingers == [0, 0, 0, 0, 0] and thumb_tip[0] > index_tip[0]:
-        asl_letter = "A"
+        asl_letter = "S"
 
     # W: Index, middle, and ring fingers up, thumb tucked in
     if fingers == [0, 1, 1, 1, 0]:
@@ -77,8 +77,6 @@ def detect_asl_letters(hand, img):
     # Y: Thumb and pinky up, other fingers curled
     if fingers == [1, 0, 0, 0, 1]:
         asl_letter = "Y"
-    
-    # ... [Add other letter conditions here] ...
 
     return asl_letter
 
