@@ -20,15 +20,13 @@ def detect_gestures(hands):
         # Define gestures based on the fingers up pattern
         if fingers == [0, 1, 1, 0, 0]:  # Index and middle finger up
             gestures.append("Peace")
-        elif fingers == [0, 1, 0, 0, 1]:  #Rock and Roll baby
+        elif fingers == [0, 1, 0, 0, 1]:  # Index and pinky up
             gestures.append("Rock&Roll")
         elif fingers == [1, 1, 1, 1, 1]:  # All fingers up
             gestures.append("Hi")
         elif fingers == [1, 0, 0, 0, 0]:  # Thumb up
             gestures.append("OK")
-        elif fingers == [0, 0, 1, 0, 0]: # YoU KNOW WHAT THIS MEANS
-            gestures.append("F****U")
-        elif fingers == [0, 0, 0, 0, 1]:  # Thumb up
+        elif fingers == [0, 0, 0, 0, 1]:  # Pinky up
             gestures.append("OK")
         elif fingers == [0, 1, 0, 0, 0]:  # 1
             gestures.append("1")
